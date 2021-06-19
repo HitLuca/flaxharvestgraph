@@ -118,4 +118,4 @@ xfx18hzk3hw7eq4s0gxz9fgftamls30awsz0h0swqzfhy9vwk0x7xymqcskwrw
 
 ## Copyright
 
-flaxharvestgraph is (c)2021 by Luca Simonetto and licensed under the MIT license.
+flaxharvestgraph is (c)2021 by Bram Stolk and licensed under the MIT license.
