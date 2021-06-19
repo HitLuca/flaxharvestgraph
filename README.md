@@ -102,15 +102,9 @@ If you have more than 8 recycled debug.log files, then you can tell the tool to 
 $ NUM_DEBUG_LOGS=15 ./flaxharvestgraph ~/.flax/mainnet/logs
 ```
 
-
-## Did you know that...
-
-* Flax Harvest Graph has a companion tool called [Flax Plot Graph](https://github.com/stolk/flaxplotgraph).
-
-
 ## Donations
 
-Flax Harvest Graph is a tool by Bram Stolk, ported by Luca Simonetto
+Flax Harvest Graph is a tool by Bram Stolk, ported from Chia to Flax by Luca Simonetto
 
 If you find this tool useful, donations can go to XFX wallet:
 xfx18hzk3hw7eq4s0gxz9fgftamls30awsz0h0swqzfhy9vwk0x7xymqcskwrw
