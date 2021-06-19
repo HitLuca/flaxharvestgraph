@@ -1,7 +1,4 @@
-// chiaharvestgraph.c
-// 
-// (c)2021 by Abraham Stolk.
-// XCH Donations: xch1zfgqfqfdse3e2x2z9lscm6dx9cvd5j2jjc7pdemxjqp0xp05xzps602592
+// flaxharvestgraph.c
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -119,7 +116,7 @@ static int quarterslot( time_t tim )
 			"tim=%zd lasttimehi=%zd d=%zd slot=%d\n"
 			"REPORT THIS MESSAGE TO %s\n",
 			tim, quarters[last].timehi, d, slot,
-			"https://github.com/stolk/chiaharvestgraph/issues/12"
+			"https://github.com/stolk/flaxharvestgraph/issues/12"
 		);
 	}
 	return slot;
@@ -187,7 +184,7 @@ static FILE* open_log_file(const char* dirname, const char* logname)
 }
 
 // Parses log entries that look like this:
-// 2021-05-13T09:14:35.538 harvester chia.harvester.harvester: INFO     0 plots were eligible for farming c1c8456f7a... Found 0 proofs. Time: 0.00201 s. Total 36 plots
+// 2021-05-13T09:14:35.538 harvester flax.harvester.harvester: INFO     0 plots were eligible for farming c1c8456f7a... Found 0 proofs. Time: 0.00201 s. Total 36 plots
 
 static void analyze_line(const char* line, ssize_t length)
 {
@@ -209,7 +206,7 @@ static void analyze_line(const char* line, ssize_t length)
 			const int num = sscanf
 			(
 				line,
-				"%04d-%02d-%02dT%02d:%02d:%f harvester chia.harvester.harvester: INFO "
+				"%04d-%02d-%02dT%02d:%02d:%f harvester flax.harvester.harvester: INFO "
 				"%d plots were eligible for farming %s Found %d proofs. Time: %f s. Total %d plots",
 				&year,
 				&month,
@@ -360,7 +357,7 @@ static void draw_column( int nr, uint32_t* img, int h, time_t now )
 		}
 		if ( proofs )
 		{
-			// Eureka! We found a proof, and will probably get paid sweet XCH!
+			// Eureka! We found a proof, and will probably get paid sweet XFX!
 			red=0x40; grn=0x40; blu=0xff;
 		}
 		const uint32_t c = (0xff<<24) | (blu<<16) | (grn<<8) | (red<<0);
@@ -528,7 +525,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		fprintf( stderr, "Usage: %s ~/.chia/mainnet/log\n", argv[0] );
+		fprintf( stderr, "Usage: %s ~/.flax/mainnet/log\n", argv[0] );
 		exit( 1 );
 	}
 	else

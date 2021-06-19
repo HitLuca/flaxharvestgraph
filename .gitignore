@@ -5,7 +5,7 @@
 *.o
 
 # Executable
-chiaharvestgraph
+flaxharvestgraph
 
 # Debug files
 *.dSYM/

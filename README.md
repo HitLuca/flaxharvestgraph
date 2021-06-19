@@ -1,20 +1,20 @@
-# Chia Harvest Graph
-Monitor for Chia Harvesting
+# Flax Harvest Graph
+Monitor for Flax Harvesting
 
 ![screenshot](images/screenshot0.png "screenshot")
 
 
 ## Introduction
 
-The chiaharvestgraph tool will graph Chia Harvesting activity in a linux terminal. Use a 24-bit colour terminal, like xterm or gnome-terminal.
+The flaxharvestgraph tool will graph Flax Harvesting activity in a linux terminal. Use a 24-bit colour terminal, like xterm or gnome-terminal.
 
 
 ## Building
 
 ```
-$ git clone https://github.com/stolk/chiaharvestgraph.git
+$ git clone https://github.com/stolk/flaxharvestgraph.git
 
-$ cd chiaharvestgraph
+$ cd flaxharvestgraph
 
 $ make
 ```
@@ -23,11 +23,11 @@ $ make
 
 To use it:
 
-Set the loglevel for Chia to **INFO** by editting `~/.chia/mainnet/config/config.yaml` and make sure you have `log_level: INFO` set.
+Set the loglevel for Flax to **INFO** by editting `~/.flax/mainnet/config/config.yaml` and make sure you have `log_level: INFO` set.
 
 Then do:
 
-**$ ./chiaharvestgraph ~/.chia/mainnet/log**
+**$ ./flaxharvestgraph ~/.flax/mainnet/log**
 
 Leave the tool running, as it keeps checking the log. More pixels will scroll in from the right, plotting top to bottom.
 
@@ -35,7 +35,7 @@ Leave the tool running, as it keeps checking the log. More pixels will scroll in
 
 ## Rationale
 
-Much can go wrong when harvesting Chia.
+Much can go wrong when harvesting Flax.
 The full node may lose connection to peers, the farmer could not be talking to the full node, the harvester could not be talking to the farmer, or maybe just spotty Internet connection?
 
 That's why it is important to keep an eye on the INFO log.
@@ -54,7 +54,7 @@ This tool will look for those lines in the logs.
 
 ## Function
 
-A Chia Harvester will get challenged every 10 seconds or so, to look for proof in its plots.
+A Flax Harvester will get challenged every 10 seconds or so, to look for proof in its plots.
 This tool will identify those lines, and register the time-stamps for those.
 If there are not enough of those time-stamps within any given period, the harvester is under-harvesting, or even not harvesting. This is colour coded on the graph.
 
@@ -66,7 +66,7 @@ On the top of the screen, the average and worst-case response times to eligible 
 
 **NOTE:** You can see more days of the week by simply resizing your terminal to be wider.
 
-**NOTE:** First time users should not be alarmed by a lot of grey colour on the left side of the screen. Chia logs are at most 7 x 20MB, and because a full node spams a lot, there are only a few hrs of info in there. On a dedicated harvester, there can be weeks of info, because it logs less. Regardless.... if you leave the tool runnining, it will hold onto the stats, up to a week's worth.
+**NOTE:** First time users should not be alarmed by a lot of grey colour on the left side of the screen. Flax logs are at most 7 x 20MB, and because a full node spams a lot, there are only a few hrs of info in there. On a dedicated harvester, there can be weeks of info, because it logs less. Regardless.... if you leave the tool runnining, it will hold onto the stats, up to a week's worth.
 
 ## Colours
 
@@ -85,35 +85,35 @@ Better check your wallet!
 
 ## Keys
 
-Press ESCAPE or Q to exit chiaharvestgraph.
+Press ESCAPE or Q to exit flaxharvestgraph.
 
 ## Environment Variables
 
 If you have trouble seeing the standard colourmap, you can select a different one:
 
 ```
-$ CMAP_VIRIDIS=1 ./chiaharvestgraph ~/.chia/mainnet/logs
-$ CMAP_MAGMA=1 ./chiaharvestgraph ~/.chia/mainnet/logs
-$ CMAP_PLASMA=1 ./chiaharvestgraph ~/.chia/mainnet/logs
+$ CMAP_VIRIDIS=1 ./flaxharvestgraph ~/.flax/mainnet/logs
+$ CMAP_MAGMA=1 ./flaxharvestgraph ~/.flax/mainnet/logs
+$ CMAP_PLASMA=1 ./flaxharvestgraph ~/.flax/mainnet/logs
 ```
 
 If you have more than 8 recycled debug.log files, then you can tell the tool to read more of them:
 ```
-$ NUM_DEBUG_LOGS=15 ./chiaharvestgraph ~/.chia/mainnet/logs
+$ NUM_DEBUG_LOGS=15 ./flaxharvestgraph ~/.flax/mainnet/logs
 ```
 
 
 ## Did you know that...
 
-* Chia Harvest Graph has a companion tool called [Chia Plot Graph](https://github.com/stolk/chiaplotgraph).
+* Flax Harvest Graph has a companion tool called [Flax Plot Graph](https://github.com/stolk/flaxplotgraph).
 
 
 ## Donations
 
-Chia Harvest Graph is a tool by Bram Stolk, who is on Twitter as: @BramStolk where he mostly tweets about game development.
+Flax Harvest Graph is a tool by Bram Stolk, ported by Luca Simonetto
 
-If you find this tool useful, donations can go to XCH wallet:
-xch1zfgqfqfdse3e2x2z9lscm6dx9cvd5j2jjc7pdemxjqp0xp05xzps602592
+If you find this tool useful, donations can go to XFX wallet:
+xfx18hzk3hw7eq4s0gxz9fgftamls30awsz0h0swqzfhy9vwk0x7xymqcskwrw
 
 ## Known issues
 
@@ -124,4 +124,4 @@ xch1zfgqfqfdse3e2x2z9lscm6dx9cvd5j2jjc7pdemxjqp0xp05xzps602592
 
 ## Copyright
 
-chiaharvestgraph is (c)2021 by Bram Stolk and licensed under the MIT license.
+flaxharvestgraph is (c)2021 by Luca Simonetto and licensed under the MIT license.
