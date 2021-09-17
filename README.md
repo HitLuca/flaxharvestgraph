@@ -102,6 +102,22 @@ If you have more than 8 recycled debug.log files, then you can tell the tool to 
 $ NUM_DEBUG_LOGS=15 ./flaxharvestgraph ~/.flax/mainnet/logs
 ```
 
+## Running from Docker
+
+First, build it
+
+```
+docker build -t flaxharvestgraph:latest .
+```
+
+Then run it
+
+```
+
+```bash
+docker run -v ~/.fkax/mainnet/log:/.fkax/mainnet/log:ro --name=fkaxharvestgraph -it fkaxharvestgraph:latest bash
+```
+
 ## Donations
 
 Flax Harvest Graph is a tool by Bram Stolk, ported from Chia to Flax by Luca Simonetto
